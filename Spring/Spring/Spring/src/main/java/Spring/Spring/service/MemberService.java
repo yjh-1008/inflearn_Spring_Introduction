@@ -2,9 +2,13 @@ package Spring.Spring.service;
 
 import Spring.Spring.domain.Member;
 import Spring.Spring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+
 
 public class MemberService {
     private final MemberRepository memberRepository;
