@@ -1,33 +1,26 @@
 package Spring.Spring.service;
 
 import Spring.Spring.domain.Member;
+import Spring.Spring.repository.MemberRepository;
 import Spring.Spring.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-class MemberServiceTest {
-    MemoryMemberRepository memberRepository;
-    MemberService memberService;
-
-    @BeforeEach
-    public void beforeEach(){
-        memberRepository = new MemoryMemberRepository();
-        memberService =  new MemberService(memberRepository);
-    }
-
-    @AfterEach
-    public void afterEach(){
-        memberRepository.clearStore();
-    }
+@SpringBootTest
+class MemberServiceIntegrationTest {
+    @Autowired MemberRepository memberRepository;
+    @Autowired MemberService memberService;
 
 
     @Test
     void 회원가입() {
         //given
         Member member = new Member();
-        member.setName("hello");
+        member.setName("spring");
 
         //when
         Long saveId= memberService.join(member);
@@ -60,12 +53,5 @@ class MemberServiceTest {
         }
 */
         //then
-    }
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
     }
 }

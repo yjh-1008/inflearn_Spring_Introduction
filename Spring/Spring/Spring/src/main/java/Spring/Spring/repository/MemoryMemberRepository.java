@@ -3,6 +3,7 @@ package Spring.Spring.repository;
 import Spring.Spring.domain.Member;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository {
