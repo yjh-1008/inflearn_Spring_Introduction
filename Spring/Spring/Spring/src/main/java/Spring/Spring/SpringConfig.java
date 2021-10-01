@@ -1,5 +1,6 @@
 package Spring.Spring;
 
+import Spring.Spring.app.TimeTraceAop;
 import Spring.Spring.repository.*;
 import Spring.Spring.service.MemberService;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +20,11 @@ public class SpringConfig {
     public MemberService memberService(){
 
         return new MemberService(memberRepository);
+    }
+
+    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
     }
 
     //@Bean
